@@ -1,26 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare Documentation Assistant</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Healthcare Documentation Assistant</h1>
-        
-        <div class="upload-section">
-            <h2>Upload Documents</h2>
-            <input type="file" id="document-upload" multiple>
-            <button onclick="uploadDocuments()">Upload</button>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-heartbeat"></i>
+            HealthDoc AI
         </div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-        <div class="query-section">
-            <h2>Ask a Question</h2>
-            <input type="text" id="query-input" placeholder="Enter your question...">
-            <button onclick="submitQuery()">Ask</button>
-            <div id="response-area"></div>
+    <main class="container">
+        <section class="hero">
+            <h1>Healthcare Documentation Assistant</h1>
+            <p class="subtitle">Streamline your medical documentation with AI-powered assistance</p>
+        </section>
+
+        <section class="main-content">
+            <div class="upload-section">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-file-upload"></i>
+                        <h2>Upload Documents</h2>
+                    </div>
+                    <div class="upload-area">
+                        <div class="upload-box">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag and drop files here or</p>
+                            <label for="document-upload" class="upload-btn">Choose Files</label>
+                            <input type="file" id="document-upload" multiple hidden>
+                        </div>
+                        <div class="file-list" id="file-list">
+                            <!-- Files will be listed here -->
+                        </div>
+                        <button class="primary-button" onclick="uploadDocuments()">
+                            <i class="fas fa-upload"></i> Upload Documents
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="query-section">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-question-circle"></i>
+                        <h2>Ask a Question</h2>
+                    </div>
+                    <div class="query-area">
+                        <div class="input-group">
+                            <input type="text" id="query-input" 
+                                   placeholder="Enter your medical documentation question..."
+                                   class="query-input">
+                            <button class="send-button" onclick="submitQuery()">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="response-area" id="response-area">
+                            <!-- AI responses will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 HealthDoc AI. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#support">Support</a>
+            </div>
         </div>
-    </div>
+    </footer>
+
     <script src="app.js"></script>
 </body>
 </html> 
